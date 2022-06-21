@@ -1,0 +1,113 @@
+@import url(normalize.css);
+
+body {
+    height:100vh;
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.logo {
+    width: 64px;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.75rem;
+    color: white;
+}
+
+.calculator {
+    display: grid;
+    grid: 
+    'header'
+    'display'
+    'buttons';
+    border: 1px solid rgb(96, 96, 96) ;
+    box-shadow: 0px 0px 20px 5px rgba(96, 96, 96, 0.5);
+    border-radius: 7px;
+    padding: 7px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.calc-header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+}
+
+.calc-display {
+    grid-area: display;
+}
+
+.calc-display input 
+{
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+    text-align: right;
+    color: darkred;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.calc-buttons {
+    width: 100%;
+    grid-area: buttons;
+    display: grid;
+    grid:
+    '. . . . . .'
+    '. . . . . .'
+    '. . . . . .'
+    '. . . . . .';
+    justify-items: center;
+    align-items: center;
+}
+
+button {
+    min-width: 50px;
+    min-height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    color: rgba(192, 192, 192, 0.8);
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    font-weight: bold;
+    color:white;
+    border: 1px solid rgba(97, 165, 68, 0.8);
+    border-radius: 5px;
+}
+
+@keyframes flash {
+    from {
+        background-color: darkred;
+    }
+
+    to {
+        background-color: white;
+    }
+}
+
+.flash {
+    animation-name: flash;
+    animation-duration: 0.75s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    background-color: darkred;
+}
